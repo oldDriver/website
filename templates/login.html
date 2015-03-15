@@ -1,0 +1,13 @@
+{% extends 'layout/layout.html' %}
+
+{% block head %}
+{% parent %}
+<link rel="stylesheet" href="/css/custom.css">
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {{ form.toHTML()}}
+        <input type="submit" value="Login">
+    </form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'layout/layout.html' %}
+
+{% block head %}
+{% parent %}
+<link rel="stylesheet" href="css/custom.css">
+{% endblock %}
+
+{% block content %}
+    {% for user in users %}
+        <a href="/user/{{ user.id }}">{{ user.nickname }}</a><br>
+    {% endfor %}
+{% endblock %}

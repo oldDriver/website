@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}My Site{% endblock %}</title>
+        {% block head %}
+        <link rel="stylesheet" href="/css/main.css">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="content">
+            {% include "../partials/menu.html" %}
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

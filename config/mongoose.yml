@@ -1,0 +1,6 @@
+default:
+  host: 'mongodb://localhost/website'
+  options:
+    server:
+      socketOptions:
+        keepAlive: 1

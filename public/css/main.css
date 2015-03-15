@@ -1,0 +1,19 @@
+body {
+    background-color: #fafafa;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    width: 940px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #f8f8f8;
+    background-color: #ffffff;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    min-height: 500px;
+}
+
+a {
+  color: #00B7FF;
+}

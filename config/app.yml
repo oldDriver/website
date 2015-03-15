@@ -1,0 +1,9 @@
+default:
+  port: 3000
+  session:
+    secret: 123123
+    key: 'sid'
+    cookie:
+      path: "/"
+      httpOnly: true
+      maxAge: null
