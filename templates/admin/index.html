@@ -1,1 +1,7 @@
 {% extends 'layout/layout.html' %}
+
+{% block content %}
+    {% for user in users %}
+        {{ user.nickname }}
+    {% endfor %}
+{% endblock %}
