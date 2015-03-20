@@ -1,5 +1,6 @@
 var User = require('models/user');
-
+// If user is not logged => pass to the homepage
+// But if user is logged => pass to the user page
 module.exports = function(req, res, next){
     var user = req.session.user;
     if (!user) {

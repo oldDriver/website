@@ -1,12 +1,19 @@
-var checkAuth = require('filters/auth');
+var isGuest = require('filters/guest');
+var isUser = require('filters/user');
+var isAdmin = require('filters/auth');
+
 module.exports = function(app) {
     // public block
-    app.get('/', require('actions/index.js').get);
-    app.get('/user/:id', require('actions/user.js').get);
-    app.post('/user/:id', require('actions/user.js').post);
-    app.get('/login', require('actions/login').get);
-    app.post('/login', require('actions/login').post);
+    app.get('/', isGuest, require('actions/index.js').get);
+    app.get('/login', isGuest, require('actions/login').get);
+    app.post('/login', isGuest, require('actions/login').post);
     app.get('/logout', require('actions/logout').get);
+    // user block
+
     // admin block
-    app.get('/admin', checkAuth, require('actions/admin/index').get);
+    app.get('/admin', isAdmin, require('actions/admin/index').get);
+    app.get('/admin/user', isAdmin, require('actions/admin/index').get);
+    app.get('/admin/user/:id', isAdmin, require('actions/admin/user.js').get);
+    app.post('/admin/user/:id', isAdmin, require('actions/admin/user.js').post);
+
 };

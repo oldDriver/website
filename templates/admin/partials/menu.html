@@ -1,0 +1,17 @@
+<div class="top-menu">
+    <div class="floatleft">
+        <ul>
+            <li><a href="/admin">Home</a></li>
+        </ul>
+    </div>
+    <div class="floatright">
+        <ul>
+            {% if (user) %}
+            <li><a href="/logout" >Выйти</a></li>
+            {% else %}
+            <li><a href="/login">Войти</a></li>
+            {% endif %}
+        </ul>
+
+    </div>
+</div>

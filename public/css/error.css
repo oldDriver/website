@@ -1,4 +1,6 @@
 .error {
     padding: 10px;
-    border: 1px solid f8f8f8;
+    border: 1px solid #f8f8f8;
+    color: red;
+    background-color: yellow;
 }

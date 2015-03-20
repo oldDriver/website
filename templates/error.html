@@ -1,7 +1,16 @@
-{% extends 'layout/layout.html' %}
+{% extends 'public/layout/layout.html' %}
+
+{% block head %}
+{% parent %}
+<link rel="stylesheet" href="css/error.css">
+{% endblock %}
 
 {% block content %}
+
     <div class="error">
+        <h1>Error:</h1>
+        <p>
         {{ error.message}}
+        </p>
     </div>
 {% endblock %}

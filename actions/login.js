@@ -2,13 +2,13 @@ var User = require('models/user');
 var form = require('forms/userLogin');
 
 exports.get = function(req, res) {
-    res.render('user', {
+    res.render('public/login', {
         form: form
     });
 };
 
 exports.post = function(req, res) {
-
+    req.user = req.session.user = null;
     form.handle(req, {
         success: function(form) {
             req.session.visits = req.session.visits + 1 ||1;
@@ -33,12 +33,12 @@ exports.post = function(req, res) {
             //res.redirect('/admin');
         },
         error: function(form) {
-            res.render('user', {
+            res.render('public/login', {
                 form: form
             });
         },
         other: function(form) {
-            res.render('user', {
+            res.render('public/login', {
                 form: form
             });
         }
